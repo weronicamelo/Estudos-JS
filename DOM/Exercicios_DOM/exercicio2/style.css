@@ -1,0 +1,37 @@
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    padding: 50px;
+    transition: 0.3s;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #aa4b60;
+    color: white;
+    border-radius: 5px;
+}
+
+.tema-escuro {
+    background-color: #853953;
+    color: white;
+}
+
+.caixa {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.1);
+}
+
+.tema-escuro .caixa {
+    background-color: #222;
+    color: white;
+}
+

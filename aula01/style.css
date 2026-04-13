@@ -1,0 +1,10 @@
+texto {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 10px;
+    font-size: 15px;
+    background-color: rgb(185, 209, 209);
+}
