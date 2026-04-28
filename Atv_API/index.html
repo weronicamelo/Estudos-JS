@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[url('./img/fundo.png')] bg-cover bg-center flex items-center justify-center h-screen">
+    <div class="bg-white/20 backdrop-blur-md p-6 rounded-xl shadow-lg w-96 border border-white/30">
+        <h1 class="text-2xl font-bold mb-4 text-center">Conversor de Moedas</h1>
+        
+        <input id="valor" type="number" placeholder="Digite o valor" class="w-full p-2 border rounded mb-3" />
+        <input id="de" type="text" placeholder="De (ex: USD)" class="w-full p-2 border rounded mb-3" />
+        <input id="para" type="text" placeholder="Para (ex: BRL)" class="w-full p-2 border rounded mb-3" />
+        
+        <button id="btnConverter" class="w-full bg-purple-500 text-white p-2 rounded-lg hover:bg-purple-600 transition duration-300">Converter</button>
+        
+        <div id="resultado" class="mt-4 text-center text-lg font-semibold"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

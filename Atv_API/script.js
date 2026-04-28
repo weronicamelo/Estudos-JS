@@ -1,0 +1,31 @@
+const api_key = "48c2d85efd268ca5de94c8fe"; 
+
+const botao = document.getElementById("btnConverter");
+botao.addEventListener("click", converter);
+
+async function converter() {
+    const valor = document.getElementById("valor").value;
+    const de = document.getElementById("de").value.toUpperCase();
+    const para = document.getElementById("para").value.toUpperCase();
+    const resultado = document.getElementById("resultado");
+    
+    try {
+        const response = await fetch(`https://v6.exchangerate-api.com/v6/${api_key}/latest/${de}`);
+        const data = await response.json();
+
+        const taxa = data.conversion_rates[para];
+
+        if (!taxa) {
+        resultado.innerText = "Moeda inválida!";
+        return;
+        }
+
+        const convertido = (valor * taxa).toFixed(2);
+
+        resultado.innerHTML = `${valor} ${de} = ${convertido} ${para}</span>`;
+    } catch (erro) {
+        resultado.innerText = "Erro ao buscar dados!";
+        console.error(erro);
+    }
+
+}
