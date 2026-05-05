@@ -5,9 +5,14 @@ botao.addEventListener("click", converter);
 
 async function converter() {
     const valor = document.getElementById("valor").value;
-    const de = document.getElementById("de").value.toUpperCase();
-    const para = document.getElementById("para").value.toUpperCase();
+    const de = document.getElementById("de").value;
+    const para = document.getElementById("para").value;
     const resultado = document.getElementById("resultado");
+
+    if (!de || !para) {
+        resultado.innerText = "Selecione as moedas!";
+        return;
+    }
     
     try {
         const response = await fetch(`https://v6.exchangerate-api.com/v6/${api_key}/latest/${de}`);
@@ -22,7 +27,7 @@ async function converter() {
 
         const convertido = (valor * taxa).toFixed(2);
 
-        resultado.innerHTML = `${valor} ${de} = ${convertido} ${para}</span>`;
+        resultado.innerHTML = `${valor} ${de} = ${convertido} ${para}`;
     } catch (erro) {
         resultado.innerText = "Erro ao buscar dados!";
         console.error(erro);
